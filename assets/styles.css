@@ -18,7 +18,7 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 .container{max-width:1100px;margin:0 auto;padding:2rem}
-.site-header{display:flex;align-items:center;justify-content:space-between;padding:0;border-bottom:1px solid rgba(11,18,32,0.06)}
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:0;border-bottom:1px solid rgba(11,18,32,0.06);background: rgba(255, 255, 255, 0.9);}
 .brand{display:flex;align-items:center;gap:.75rem;margin:0;min-width:0}
 .brand .title{font-size:1.125rem;font-weight:700;color:var(--accent)}
 .tagline{margin:0;color:var(--muted);font-size:0.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:360px}
@@ -60,6 +60,12 @@ nav a:hover{color:var(--accent)}
   z-index: 1000;
   background: var(--bg);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure header text remains legible */
+.site-header {
+  background: var(--bg); /* Already defined, ensures consistency */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
 }
 
 /* Removed slide-and-fade effect */
@@ -109,7 +115,7 @@ body.dark-mode {
 /* Use a campaign-appropriate parchment background if present */
 @supports (background-image: url("parchment.jpg")) {
   .hero{
-    background-image: linear-gradient(rgba(11,18,32,0.45), rgba(11,18,32,0.15)), url('parchment.jpg');
+    background-image: linear-gradient(rgba(11, 18, 32, 0.6), rgba(11, 18, 32, 0.3)), url('parchment.jpg');
     color: #fff;
     border: 1px solid rgba(11,18,32,0.06);
   }
@@ -177,4 +183,21 @@ body.dark-mode {
   .site-header .brand{flex:0 0 auto}
   .site-header .titlebar{order:1;margin-top:.5rem}
   .brand .title, .brand .tagline{white-space:normal;max-width:none}
+}
+
+/* Highlight strong text for emphasis */
+ol li strong {
+  color: var(--accent-2);
+  font-weight: bold;
+  font-size: 1.2em; /* Increased font size for emphasis */
+}
+
+/* Add spacing between list items */
+ol li {
+  margin-bottom: 0.75rem; /* Adds space between list items */
+}
+
+/* Update header background to a light gradient */
+.site-header {
+  background: linear-gradient(180deg, #ffffff, #e0e0e0); /* Subtle light gradient */
 }
