@@ -1,0 +1,131 @@
+.theme-corporate{
+  --bg:#ffffff;
+  --muted:#6b7280;
+  --accent:#0f172a;
+  --accent-2:#8b5cf6;
+  --card:#f8fafc;
+  --text:#0b1220;
+}
+
+:root{ --font-sans: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--font-sans);
+  background: linear-gradient(180deg, #fbfdff, #f3f7fb);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:1100px;margin:0 auto;padding:2rem}
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:0;border-bottom:1px solid rgba(11,18,32,0.06)}
+.brand{display:flex;align-items:center;gap:.75rem;margin:0;min-width:0}
+.brand .title{font-size:1.125rem;font-weight:700;color:var(--accent)}
+.tagline{margin:0;color:var(--muted);font-size:0.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:360px}
+nav a{color:var(--muted);text-decoration:none;margin-left:1rem}
+nav a:hover{color:var(--accent)}
+.hero{padding:3rem 0;text-align:left;display:flex;gap:2rem;align-items:center}
+.hero .lead{flex:1}
+.hero h2{margin:0 0 .5rem;font-size:2rem}
+.hero p{color:var(--muted);margin:.5rem 0}
+.cta{display:inline-block;margin-top:1rem;padding:.75rem 1.25rem;background:var(--accent-2);color:white;border-radius:8px;text-decoration:none;font-weight:700}
+.hero{
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  border-radius:12px;
+}
+.hero::before{
+  content:"";
+  display:block;
+  position:relative;
+}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;padding:2rem 0}
+.features article{background:var(--card);padding:1.25rem;border-radius:10px;box-shadow:0 6px 18px rgba(11,18,32,0.06)}
+.features h3{margin:0 0 .6rem;color:var(--accent)}
+.muted{color:var(--muted)}
+.site-footer{padding:1.25rem 0;border-top:1px solid rgba(11,18,32,0.04);text-align:center;color:var(--muted)}
+
+/* Fantasy accent elements */
+.seal{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .6rem;border-radius:999px;background:linear-gradient(90deg,#fff,#f9f7ff);border:1px solid rgba(11,18,32,0.04);font-weight:700}
+
+/* Responsive adjustments */
+@media (max-width:800px){
+  .hero{flex-direction:column;text-align:center}
+  .features{grid-template-columns:1fr}
+  nav a{display:inline-block;margin:0 .6rem}
+}
+
+/* If user provides assets/bg.jpg, apply subtle overlay */
+/* Use a campaign-appropriate parchment background if present */
+@supports (background-image: url("parchment.jpg")) {
+  .hero{
+    background-image: linear-gradient(rgba(11,18,32,0.45), rgba(11,18,32,0.15)), url('parchment.jpg');
+    color: #fff;
+    border: 1px solid rgba(11,18,32,0.06);
+  }
+  .hero p, .hero .muted{color:rgba(255,255,255,0.95)}
+}
+
+/* Full-bleed hero: make the .hero section span the viewport width while keeping content centered */
+.hero-fullbleed{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  padding:4rem 2rem;
+}
+
+/* Keep hero content constrained and centered */
+.hero-fullbleed > .container{ max-width:1100px; margin:0 auto; }
+
+/* Remove rounded corners for full-bleed hero for a marketing look */
+.hero-fullbleed{ border-radius:0; }
+
+/* Title/tab bar styles (left side) */
+.titlebar{display:flex;align-items:center;gap:.5rem;padding:.45rem 0}
+.titlebar .tabs{display:flex;gap:.12rem;background:var(--card);padding:.12rem;border-radius:8px;border:1px solid rgba(11,18,32,0.04);box-shadow:0 2px 8px rgba(11,18,32,0.04)}
+.titlebar .tabs a{display:inline-block;padding:.45rem .9rem;border-radius:6px 6px 0 0;text-decoration:none;color:var(--muted);font-weight:600;background:transparent;border:1px solid transparent}
+.titlebar .tabs a:hover{color:var(--accent);background:rgba(11,18,32,0.02)}
+.titlebar .tabs a.active{background:linear-gradient(180deg,var(--accent),#6b4cf6);color:white;box-shadow:0 8px 22px rgba(11,18,32,0.12);border-color:rgba(11,18,32,0.06);margin-bottom:-1px}
+
+/* When active tab sits over the full-bleed hero, remove its bottom border so it appears connected */
+.hero-fullbleed + .features, .hero-fullbleed + section{ /* no-op: keeps selector order */ }
+
+/* Place tabs to the left of the header (next to logo) */
+.site-header > .container{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.site-header .brand{flex:0 0 420px;min-width:0}
+.site-header .titlebar{order:0;flex:1}
+.site-header nav{margin-left:auto}
+
+/* Button styles (looks like real buttons with hover/focus states) */
+.btn, .cta{
+  display:inline-block;
+  padding:.6rem 1rem;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow: 0 6px 18px rgba(11,18,32,0.06);
+  transition: transform .12s ease, box-shadow .12s ease, background-color .12s ease;
+}
+.btn{
+  background: white;
+  color: var(--accent);
+  border: 1px solid rgba(11,18,32,0.06);
+}
+.btn:hover{ transform: translateY(-3px); box-shadow: 0 12px 28px rgba(11,18,32,0.12); }
+.btn:active{ transform: translateY(-1px); }
+.btn:focus{ outline:3px solid rgba(139,92,246,0.18); outline-offset:2px }
+
+.cta{ background:var(--accent-2); color:white }
+.cta:hover{ transform: translateY(-3px); box-shadow:0 14px 34px rgba(11,18,32,0.18); }
+
+/* small utility for back links styled as buttons */
+.btn-back{ display:inline-block; margin-top:1rem }
+
+/* Responsive header behavior: move tabs below brand on small screens */
+@media (max-width:800px){
+  .site-header > .container{flex-direction:column;align-items:stretch}
+  .site-header .brand{flex:0 0 auto}
+  .site-header .titlebar{order:1;margin-top:.5rem}
+  .brand .title, .brand .tagline{white-space:normal;max-width:none}
+}
