@@ -135,7 +135,7 @@ body.dark-mode {
 .titlebar .tabs{display:flex;gap:.12rem;background:var(--card);padding:.12rem;border-radius:8px;border:1px solid rgba(11,18,32,0.04);box-shadow:0 2px 8px rgba(11,18,32,0.04)}
 .titlebar .tabs a{display:inline-block;padding:.45rem .9rem;border-radius:6px 6px 0 0;text-decoration:none;color:var(--muted);font-weight:600;background:transparent;border:1px solid transparent}
 .titlebar .tabs a:hover{color:var(--accent);background:rgba(11,18,32,0.02)}
-.titlebar .tabs a.active{background:linear-gradient(180deg,var(--accent),#6b4cf6);color:white;box-shadow:0 8px 22px rgba(11,18,32,0.12);border-color:rgba(11,18,32,0.06);margin-bottom:-1px}
+.titlebar .tabs a.active{background:linear-gradient(180deg,#0f172a,#6b4cf6);color:#f3f7fb;box-shadow:0 8px 22px rgba(11,18,32,0.12);border-color:rgba(11,18,32,0.06);margin-bottom:-1px}
 
 /* When active tab sits over the full-bleed hero, remove its bottom border so it appears connected */
 .hero-fullbleed + .features, .hero-fullbleed + section{ /* no-op: keeps selector order */ }
