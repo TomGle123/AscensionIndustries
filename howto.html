@@ -1,9 +1,12 @@
 <!doctype html>
 <html lang="en">
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>How to Use — Pants of Ascension</title>
-  <link rel="stylesheet" href="assets/styles.css">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>How to Use — Pants of Ascension</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  </head>
   <body>
     <header class="site-header">
       <div class="container">
@@ -43,6 +46,19 @@
 
       <p><a class="btn btn-back" href="index.html">← Back</a></p>
     </main>
-    <footer class="site-footer"><div class="container"><small>Ascension Industries</small></div></footer>
+    <footer class="site-footer">
+      <div class="container">
+        <small>Ascension Industries</small>
+      </div>
+    </footer>
+
+    <!-- Dark Mode Toggle Button -->
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌓</button>
+
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+      }
+    </script>
   </body>
 </html>
